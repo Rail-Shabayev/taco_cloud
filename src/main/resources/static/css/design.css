@@ -1,0 +1,127 @@
+:root {
+    --main-pink: #ff9f9f90;
+    --secondary-pink: #ffcfaf2f;
+    --main-grey: #afafaf50;
+    --main-gray: #5a5a5a;
+    --secondary-grey: #5a5a5a08;
+    --main-background: #fef9f9;
+}
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*   header   */
+
+#header {
+    width: 99%;
+    margin: 5px auto;
+    padding: 0 20px;
+    background: repeating-linear-gradient(
+        60deg,
+        var(--secondary-pink),
+        var(--main-pink)
+    );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 15px 15px 15px var(--main-grey);
+}
+#header-img {
+    width: 100px;
+}
+#nav-logout {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.nav-link:hover {
+    background: var(--main-pink);
+}
+.nav-link, #nav-logout{
+    font-family: 'Alegreya', serif;
+    font-size: 2rem;
+    padding: 0 20px;
+    color: var(--main-gray);
+    white-space: nowrap;
+}
+#nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+/*   body   */
+
+body {
+    background: var(--main-background);
+    font-family: 'Alegreya', serif;
+}
+div.ingredient-group:nth-child(odd) {
+	float: left;
+	padding-right: 20px;
+}
+div.ingredient-group:nth-child(even) {
+    float: left;
+	padding-right: 0;
+}
+div.ingredient-group {
+	width: 44%;
+	border: 1px solid black;
+	margin: 15px;
+}
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h1{
+    text-align: center;
+    margin: 45px 0px 15px 0px;
+    font-size: 3rem;
+}
+h3 {
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+#sub-name {
+    font-size: 1.7rem;
+}
+
+#main {
+    width: 700px;
+    margin: 20px auto;
+    padding: 20px 0;
+    background: var(--secondary-grey);
+    text-align: center;
+}
+
+#submit {
+    margin-top: 10px;
+    background: white;
+    border: none;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+#name-enter {
+    width: 200px;
+    height: 20px;
+    border: 1px solid grey;
+}
+.ing-name1 {
+    vertical-align: middle;
+    float: right;
+    margin-right: 90px;
+}
+.ing-name {
+    margin-left: 80px;
+    display: inline-block;
+    overflow: hidden;
+}

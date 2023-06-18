@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/design.css" th:href="@{../css/design.css}">
+    <title>Taco Cloud</title>
+</head>
+
+<body>
+<header id="header">
+    <a href="/"> <img id="header-img"
+                      src="https://www.freepnglogos.com/uploads/flamingo-png/flamingo-flocking-fun-enjoy-randolph-28.png"
+                      alt="flamingo flocking fun enjoy randolph"/></a>
+    <div id="nav-bar">
+        <a class="nav-link" href="http://localhost:8080/recent">Недавно созданные тако</a>
+        <a class="nav-link" href="http://localhost:8080/design">Создать тако</a>
+        <form class="nav-link" method="post" th:action="@{/logout}">
+            <input id="nav-logout" type="submit" value="Выйти">
+        </form>
+    </div>
+</header>
+<h1>Создайте ваше тако!</h1>
+<section id="main">
+    <form method="POST" th:object="${taco}" th:action="@{/design}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ingredients')}"
+          th:errors="*{ingredients}">Ingredient Error</span>
+
+        <div class="grid">
+            <div class="ingredient-group" id="wraps">
+                <h3>Выберите вид лепёшки:</h3>
+                <div th:each="ingredient : ${wrap}">
+                    <input class="ing-name1" th:field="*{ingredients}" type="checkbox"
+                    th:value="${ingredient.id}"/>
+                    <span class="ing-name" th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+
+            <div class="ingredient-group" id="proteins">
+                <h3>Выберите тип мяса:</h3>
+                <div th:each="ingredient : ${protein}">
+                    <input class="ing-name1" th:field="*{ingredients}" type="checkbox"
+                    th:value="${ingredient.id}"/>
+                    <span class="ing-name" th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+
+            <div class="ingredient-group" id="cheeses">
+                <h3>Выберите сыр:</h3>
+                <div th:each="ingredient : ${cheese}">
+                    <input class="ing-name1" th:field="*{ingredients}" type="checkbox"
+                    th:value="${ingredient.id}"/>
+                    <span class="ing-name" th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+
+            <div class="ingredient-group" id="veggies">
+                <h3>Выберите овощи:</h3>
+                <div th:each="ingredient : ${veggies}">
+                    <input class="ing-name1" th:field="*{ingredients}" type="checkbox"
+                    th:value="${ingredient.id}"/>
+                    <span class="ing-name" th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+
+            <div class="ingredient-group" id="sauces">
+                <h3>Выберите соус:</h3>
+                <div th:each="ingredient : ${sauce}">
+                    <input class="ing-name1" th:field="*{ingredients}" type="checkbox"
+                    th:value="${ingredient.id}"/>
+                    <span class="ing-name" th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 id="sub-name">Назовите ваше тако:</h3>
+            <input id="name-enter" type="text" th:field="*{name}"/>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}">Name Error</span>
+            <br/>
+
+            <input type="submit" id="submit" value="Принять тако">
+        </div>
+    </form>
+</section>
+</body>
+</html>

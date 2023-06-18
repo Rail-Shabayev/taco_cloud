@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/home.css" th:href="@{css/home.css}">
+    <title>Taco Cloud</title>
+</head>
+<body>
+<header id="header">
+    <img id="header-img"
+         src="https://www.freepnglogos.com/uploads/flamingo-png/flamingo-flocking-fun-enjoy-randolph-28.png"
+         alt="flamingo flocking fun enjoy randolph"/>
+    <div id="nav-bar">
+        <a class="nav-link" href="http://localhost:8080/recent">Недавно созданные тако</a>
+        <a class="nav-link" href="http://localhost:8080/design">Создать тако</a>
+        <form class="nav-link" method="post" th:action="@{/logout}">
+            <input id="nav-logout" type="submit" value="Выйти">
+        </form>
+    </div>
+</header>
+<section id="main-section">
+    <h2>Тако</h2>
+    <img id="img-1" class="section-img"
+         src="https://images-gmi-pmc.edge-generalmills.com/e59f255c-7498-4b84-9c9d-e578bf5d88fc.jpg">
+    <p class="taco-text">Мексика, маис, чили, гуакамоле, тако – и сразу перед глазами прозрачный воздух, танцующий от
+        зноя, сомбреро над белозубыми улыбками и обжигающая, захватывающая дух еда. Лепёшки тако – это традиционные
+        мексиканские лепёшки, приготовленные из кукурузной (маисовой) муки, сложенные вдвое и служащие своеобразной
+        тарелкой, карманом для разнообразных начинок (калоризатор). Лепёшки тако можно начинить мясом, морепродуктами,
+        овощами, но обязательно должны присутствовать соусы и много перца чили.
+        Во всех странах мира есть свой собственный фаст-фуд, в Японии это лапша, в Германии хот-доги, в Америке
+        гамбургеры, а вот страны Центральной Америки «быстро» питаются свежей и полезной едой, которую по названию
+        лепёшек называют тако.
+    </p>
+    <p class="taco-text">Исторически сложилось, что в Мексики и других странах Центрально-Американского региона кукуруза
+        была и остаётся злаком номер один. Поэтому и традиционные лепёшки – тако и тортилья, и многие виды хлебобулочных
+        изделий выпекают из кукурузной муки.</p>
+    <h2>Состав и полезные свойства Тако</h2>
+    <img id="img-2" class="section-img"
+         src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2Fproject%2Fgmi%2Foldelpaso%2Foldelpaso-us%2Frecipes%2Fed13e604-f9d5-4427-bea3-9f675f663769.jpg%3Fw%3D1200%26rev%3D43246f5e76fb40eb9ef6c2dcec33227a%201540w">
+    <p class="taco-text">В климате, где всегда жарко, велика вероятность того, что любые продукты быстро испортятся,
+        поэтому к лепёшкам тако предъявляются высокие требования (calorizator). Все ингредиенты для их приготовления
+        должны быть свежими и высокого качества.
+        Поэтому химический состав лепёшек тако пестрит названиями витаминов и полезных для организма минералов, таки
+        как: бета-каротин, холин, витамины В1, В2, В5, В6, В9, А, Е, К и РР, а также калий, кальций, магний, цинк,
+        селен, медь и марганец, железо, фосфор и натрий.</p>
+</section>
+</body>
+</html>

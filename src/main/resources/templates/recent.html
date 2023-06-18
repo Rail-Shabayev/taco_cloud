@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/recent.css" th:href="@{../css/recent.css}">
+    <title>Recent tacos</title>
+</head>
+<body>
+<header id="header">
+    <a href="/"> <img id="header-img"
+                      src="https://www.freepnglogos.com/uploads/flamingo-png/flamingo-flocking-fun-enjoy-randolph-28.png"
+                      alt="flamingo flocking fun enjoy randolph"/></a>
+    <div id="nav-bar">
+        <a class="nav-link" href="http://localhost:8080/design">Создать тако</a>
+        <form class="nav-link" method="post" th:action="@{/logout}">
+            <input id="nav-logout" type="submit" value="Выйти">
+        </form>
+    </div>
+</header>
+<section id="main">
+    <h1>Недавно созданнные тако</h1>
+    <div id="recent">
+        <table>
+            <tr>
+                <th>Номер</th>
+                <th>Название</th>
+                <th>Ингредиенты</th>
+            </tr>
+            <tr>
+                <td>
+                    <div id="id-row" class="table-row" th:each="taco : ${tacos}">
+                        <span class="row-data" th:text="${taco.id}">taco-id</span><br/>
+                    </div>
+                </td>
+                <td>
+                    <div id="name-row" class="table-row" th:each="taco : ${tacos}">
+                        <span class="row-data" th:text="${taco.name}">taco-name</span><br/>
+                    </div>
+                </td>
+                <td>
+                    <div id="ing-row" class="table-row" th:each="taco : ${tacos}">
+                        <pre id="ing-name" class="row-data" th:each="ingredient : ${taco.ingredients}"
+                              th:text="' -' + ${ingredient.name} + '- ' ">ingredient-name</pre>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>
